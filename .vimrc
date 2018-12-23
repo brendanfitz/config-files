@@ -1,8 +1,7 @@
 set nocompatible
-
 filetype off
 
-"" set the runtime path to include Vundle and initialize
+" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
@@ -13,7 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 " BFNOTE: check out nerdtree and vim-fugitive and powerline
 "Plugin 'scrooloose/nerdtree'
@@ -22,13 +21,19 @@ Plugin 'nvie/vim-flake8'
 
 " all Plugins must be added before the following line
 call vundle#end()
-filetype plugin indent on
 
-" define leader
+" pathogen
+execute pathogen#infect()
+
+syntax on
+filetype plugin indent on 
+
+" define leader and localeader
 let mapleader = ","
+let maplocalleader = ","
 
-" clear line and insert
-nnoremap <leader>c ddO
+" clear line and insert - TODO: currently using c for comments
+"nnoremap <leader>c ddO
 
 " wrap quotes
 nnoremap <leader>" viw<esc>a"<esc>bi"<esc>lel
@@ -58,20 +63,31 @@ nnoremap <space> za
 set number
 
 " add proper PEP 8 indentation
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
+augroup pep8indents
+    autocmd!
+    autocmd BufNewFile,BufRead *.py :set tabstop=4
+    autocmd BufNewFile,BufRead *.py :set softtabstop=4
+    autocmd BufNewFile,BufRead *.py :set shiftwidth=4
+    autocmd BufNewFile,BufRead *.py :set textwidth=79
+    autocmd BufNewFile,BufRead *.py :set expandtab
+    autocmd BufNewFile,BufRead *.py :set autoindent
+    autocmd BufNewFile,BufRead *.py :set fileformat=unix
+augroup END
 
 " full stack development
-au BufNewFile,BufRead *.js,*.html,*.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+augroup fullstack
+    autocmd!
+    autocmd BufNewFile,BufRead *.js,*.html,*.css :set tabstop=2
+    autocmd BufNewFile,BufRead *.js,*.html,*.css :set softtabstop=2
+    autocmd BufNewFile,BufRead *.js,*.html,*.css :set shiftwidth=2
+augroup END
+
+" The below is from Learn Vim Script the Hard Way
+" BF NOTE: figure out what this does
+"augroup file_type_html
+"    autocmd!
+"    autocmd Filetype html nnoremap <buffer> <localeader>f Vatzf
+"augroup END
 
 " flag white space
 "au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
@@ -79,4 +95,34 @@ au BufNewFile,BufRead *.js,*.html,*.css
 set encoding=utf-8
 
 let python_highlight_all=1
-syntax on
+
+autocmd Filetype javascript nnoremap <buffer> <localleader>c I//<esc>
+autocmd Filetype python     nnoremap <buffer> <localleader>c I#<esc>
+
+autocmd Filetype javascript :iabbrev <buffer> iff if ()<left>
+autocmd Filetype python     :iabbrev <buffer> iff if:<left>
+
+" Status line
+set laststatus=2
+set statusline=%t "tail of filename
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%h "help file flag
+set statusline+=%m "modified flag
+set statusline+=%r "read only flag
+set statusline+=%y "filetype
+set statusline+=%= "left/right separator
+set statusline+=%c, "cursor column/line length
+set statusline+=%l/%L "cursor line/total lines
+set statusline+=\ %P "percent through file
+
+" Check box fun
+nnoremap <leader>[ o[ ]    
+nnoremap <leader>{ o[ ]    ( )    
+nnoremap <leader>] 0lrx<esc>    
+
+" vim-slime
+let g:slime_target="tmux"
+let g:slime_python_ipython=1
+nnoremap <leader>s <Plug>SlimeMotionSend
+nnoremap <leader>ss <Plug>SlimeLineSend

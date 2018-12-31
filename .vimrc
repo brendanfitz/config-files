@@ -50,7 +50,7 @@ nnoremap <leader>h <C-W><C-H>
 
 " Edit my vimrc file and source it
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>vs :source $MYVIMRC<cr>
 
 " TODO: add single keystroke mapping for switching between splits
 
@@ -124,5 +124,13 @@ nnoremap <leader>] 0lrx<esc>
 " vim-slime
 let g:slime_target="tmux"
 let g:slime_python_ipython=1
-nnoremap <leader>s <Plug>SlimeMotionSend
-nnoremap <leader>ss <Plug>SlimeLineSend
+let g:slime_default_config = {"socket_name": "default", "target_pane": "1"}
+let g:slime_no_mappings=1
+let g:slime_dont_ask_default=1
+xmap <leader>s <Plug>SlimeRegionSend
+nmap <leader>s <Plug>SlimeParagraphSend
+nmap <leader>v <Plug>SlimeConfig
+
+" highlight characters past the 80 per line
+highlight OverLength ctermbg=red ctermfg=white
+match OverLength /\%81v.\+/

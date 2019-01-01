@@ -17,5 +17,3 @@ function pyde {
     fi
     tmux attach -t $SESSION
 }
-
-pyde

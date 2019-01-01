@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 export EDITOR=vim
-alias chrome='google-chrome &>/dev/null &'
+
 # added by Anaconda3 5.3.1 installer
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -134,3 +134,11 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+
+# BF Additions
+
+if [ -f ~/Documents/Github/config_files/pyde.sh ]; then
+    . ~/Documents/Github/config_files/pyde.sh
+fi
+
+# BF Additions End

@@ -1,8 +1,8 @@
 #!/bin/bash
 function pyde {
     SBASE="pyde"
-    let NUM="$(tmux ls | grep $SBASE | tail -n 1 | cut -d ' ' -f 1 |\
-	       sed 's/[^0-9]*//g')"+1
+    let NUM="$(tmux ls 2> /dev/null | grep $SBASE | tail -n 1 |\
+	       cut -d ' ' -f 1 | sed 's/[^0-9]*//g')"+1
 
     SESSION="$SBASE$NUM"
     tmux new -s $SESSION -d

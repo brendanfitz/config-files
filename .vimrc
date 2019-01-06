@@ -82,9 +82,7 @@ augroup fullstack
     autocmd BufNewFile,BufRead *.js,*.html,*.css :set shiftwidth=2
 augroup END
 
-" The below is from Learn Vim Script the Hard Way
-" BF NOTE: figure out what this does
-"augroup file_type_html
+" The below is from Learn Vim Script the Hard Way " BF NOTE: figure out what this does "augroup file_type_html
 "    autocmd!
 "    autocmd Filetype html nnoremap <buffer> <localeader>f Vatzf
 "augroup END
@@ -134,3 +132,17 @@ nmap <leader>v <Plug>SlimeConfig
 " highlight characters past the 80 per line
 highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
+
+" color scheme
+colorscheme monokai
+
+" Prepend ~/.backup to backupdir so that Vim will look for that directory
+" before littering the current dir with backups.
+" You need to do "mkdir ~/.backup" for this to work.
+set backupdir^=~/.backup
+" Also use ~/.backup for swap files. The trailing // tells Vim to incorporate
+" full path into swap file names.
+set dir^=~/.backup//
+" Also use ~/.backup for swap files. The trailing // tells Vim to incorporate
+" full path into swap file names.
+set dir^=~/.backup//

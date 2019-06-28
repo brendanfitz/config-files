@@ -141,4 +141,6 @@ if [ -f ~/Documents/Github/config_files/pyde.sh ]; then
     . ~/Documents/Github/config_files/pyde.sh
 fi
 
+export PATH=$PATH:/usr/local/spark/bin
+
 # BF Additions End

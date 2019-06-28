@@ -141,6 +141,14 @@ if [ -f ~/Documents/Github/config_files/pyde.sh ]; then
     . ~/Documents/Github/config_files/pyde.sh
 fi
 
-export PATH=$PATH:/usr/local/spark/bin
+export ANACONDA_ROOT=~/anaconda3
+export PYSPARK_DRIVER_PYTHON="jupyter"
+export PYSPARK_DRIVER_PYTHON_OPTS="notebook"
+export PYSPARK_PYTHON=$ANACONDA_ROOT/bin/python
+export PYSPARK_PYTHON=python3
 
+export SPARK_HOME=/usr/local/spark
+export PATH=$SPARK_HOME:$PATH
+
+export PYTHON_PATH=$SPARK_HOME/python:$PYTHON_PATH
 # BF Additions End

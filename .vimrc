@@ -11,7 +11,7 @@ Plugin 'gmarik/Vundle.vim'
 " add all Vundle plugins here
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'davidhalter/jedi-vim'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 " BFNOTE: check out nerdtree and vim-fugitive and powerline
@@ -21,9 +21,6 @@ Plugin 'nvie/vim-flake8'
 
 " all Plugins must be added before the following line
 call vundle#end()
-
-" pathogen
-execute pathogen#infect()
 
 syntax on
 filetype plugin indent on 
@@ -134,15 +131,13 @@ highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
 
 " color scheme
-colorscheme monokai
+" colorscheme monokai
 
 " Prepend ~/.backup to backupdir so that Vim will look for that directory
 " before littering the current dir with backups.
 " You need to do "mkdir ~/.backup" for this to work.
+set swapfile
 set backupdir^=~/.backup
-" Also use ~/.backup for swap files. The trailing // tells Vim to incorporate
-" full path into swap file names.
-set dir^=~/.backup//
 " Also use ~/.backup for swap files. The trailing // tells Vim to incorporate
 " full path into swap file names.
 set dir^=~/.backup//

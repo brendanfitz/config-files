@@ -15,9 +15,10 @@ Plugin 'davidhalter/jedi-vim'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
 " BFNOTE: check out nerdtree and vim-fugitive and powerline
-"Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 "Plugin 'tpope/vim-fugitive'
 "Plugin 'Lokaltlog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'preservim/tagbar'
 
 " all Plugins must be added before the following line
 call vundle#end()
@@ -141,3 +142,6 @@ set backupdir^=~/.backup
 " Also use ~/.backup for swap files. The trailing // tells Vim to incorporate
 " full path into swap file names.
 set dir^=~/.backup//
+
+" tagbar
+nmap <F8> :TagbarToggle<CR>

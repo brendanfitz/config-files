@@ -14,15 +14,16 @@ Plugin 'vim-scripts/indentpython.vim'
 Plugin 'davidhalter/jedi-vim'
 "Plugin 'vim-syntastic/syntastic'
 Plugin 'nvie/vim-flake8'
-" BFNOTE: check out nerdtree and vim-fugitive and powerline
 Plugin 'scrooloose/nerdtree'
-"Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-fugitive'
+"BFNOTE: checkout powerline
 "Plugin 'Lokaltlog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'preservim/tagbar'
 
 " all Plugins must be added before the following line
 call vundle#end()
 
+let python_highlight_all=1
 syntax on
 filetype plugin indent on 
 
@@ -66,7 +67,7 @@ augroup pep8indents
     autocmd BufNewFile,BufRead *.py :set tabstop=4
     autocmd BufNewFile,BufRead *.py :set softtabstop=4
     autocmd BufNewFile,BufRead *.py :set shiftwidth=4
-    autocmd BufNewFile,BufRead *.py :set textwidth=79
+"    autocmd BufNewFile,BufRead *.py :set textwidth=79
     autocmd BufNewFile,BufRead *.py :set expandtab
     autocmd BufNewFile,BufRead *.py :set autoindent
     autocmd BufNewFile,BufRead *.py :set fileformat=unix
@@ -89,8 +90,6 @@ augroup END
 "au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
 set encoding=utf-8
-
-let python_highlight_all=1
 
 autocmd Filetype javascript nnoremap <buffer> <localleader>c I//<esc>
 autocmd Filetype python     nnoremap <buffer> <localleader>c I#<esc>
@@ -128,8 +127,8 @@ nmap <leader>s <Plug>SlimeParagraphSend
 nmap <leader>v <Plug>SlimeConfig
 
 " highlight characters past the 80 per line
-highlight OverLength ctermbg=red ctermfg=white
-match OverLength /\%81v.\+/
+" highlight OverLength ctermbg=red ctermfg=white
+" match OverLength /\%81v.\+/
 
 " color scheme
 " colorscheme monokai
@@ -138,10 +137,10 @@ match OverLength /\%81v.\+/
 " before littering the current dir with backups.
 " You need to do "mkdir ~/.backup" for this to work.
 set swapfile
-set backupdir^=~/.backup
+set backupdir=/tmp
+set directory=/tmp
 " Also use ~/.backup for swap files. The trailing // tells Vim to incorporate
 " full path into swap file names.
-set dir^=~/.backup//
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>

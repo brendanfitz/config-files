@@ -61,6 +61,12 @@ nnoremap <space> za
 " Line numbers
 set number
 
+" nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
+
 " add proper PEP 8 indentation
 augroup pep8indents
     autocmd!

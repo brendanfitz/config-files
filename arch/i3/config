@@ -192,11 +192,12 @@ bar {
 exec --no-startup-id /usr/bin/feh --bg-scale /home/brendan/.config/i3/wallpaper.jpeg
 
 # picom
-exec --no-startup-id /usr/bin/picom
+exec_always --no-startup-id picom -bc --config ~/.config/picom/picom.conf
 
 # i3 gaps
 for_window [class=".*"] border pixel 0
-gaps inner 20
+gaps inner 15
+gaps outer 5
 # Activate smart borders (always)
 smart_borders on
 # Activate smart borders (only when there are effectively no gaps)

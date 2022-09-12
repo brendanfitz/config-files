@@ -13,3 +13,7 @@ ln -s ~/Documents/GitHub/config-files/arch/rofi/config.rasi ~/.config/rofi/
 
 # picom
 ln -s ~/Documents/GitHub/config-files/arch/picom/picom.conf ~/.config/picom
+
+# polybar
+ln -s ~/Documents/GitHub/config-files/arch/polybar/config.ini ~/.config/polybar/config.ini
+

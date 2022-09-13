@@ -116,4 +116,5 @@ alias ll="ls -alF"
 # vim
 bindkey -v
 
-PATH=$PATH:~/.local/bin
+# PATH=$PATH:~/.local/bin:/bin:/usr/bin:/usr/local/bin
+# export PATH

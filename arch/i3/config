@@ -46,7 +46,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec konsole
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -191,7 +191,7 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id /usr/bin/feh --bg-scale /home/brendan/.config/i3/wallpaper.jpeg
 
 # picom
-exec_always --no-startup-id picom -bc --config ~/.config/picom/picom.conf
+exec_always --no-startup-id picom -bc --config ~/.config/picom/picom.conf --experimental-backends --xrender-sync --xrender-sync-fence
 
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh

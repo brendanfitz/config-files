@@ -1,4 +1,8 @@
 # alacritty
+rm ~/.xinitrc
+ln -s ~/Documents/GitHub/config-files/arch/xinit/.xinitrc ~/
+
+# alacritty
 mkdir ~/.config/alacritty
 rm ~/.config/alacritty/alacritty.yml
 ln -s ~/Documents/GitHub/config-files/arch/alacritty/alacritty.yml ~/.config/alacritty/

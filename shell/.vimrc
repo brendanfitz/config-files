@@ -35,9 +35,12 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'nvie/vim-flake8'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
-"BFNOTE: checkout powerline
-"Plugin 'Lokaltlog/powerline', {'rtp': 'powerline/bindings/vim/'}
+" Plugin 'Lokaltlog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'preservim/tagbar'
+
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'preservim/vim-markdown'
 
 " all Plugins must be added before the following line
 call vundle#end()

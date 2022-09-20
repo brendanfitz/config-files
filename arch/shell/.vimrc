@@ -109,6 +109,16 @@ augroup fullstack
     autocmd BufNewFile,BufRead *.js,*.html,*.css :set shiftwidth=2
 augroup END
 
+augroup arduino
+    autocmd!
+    autocmd BufNewFile,BufRead *.ino :set tabstop=4
+    autocmd BufNewFile,BufRead *.ino :set softtabstop=4
+    autocmd BufNewFile,BufRead *.ino :set shiftwidth=4
+    autocmd BufNewFile,BufRead *.ino :set expandtab
+    autocmd BufNewFile,BufRead *.ino :set autoindent
+    autocmd BufNewFile,BufRead *.ino :set fileformat=unix
+augroup END
+
 " The below is from Learn Vim Script the Hard Way " BF NOTE: figure out what this does "augroup file_type_html
 "    autocmd!
 "    autocmd Filetype html nnoremap <buffer> <localeader>f Vatzf

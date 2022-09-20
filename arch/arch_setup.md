@@ -81,6 +81,7 @@ arduino-cli board list
 ```
 example usage
 ```
+arduino-cli sketch new MyFirstSketch
 arduino-cli compile --fqbn  arduino:avr:nano ~/Arduino/MyFirstSketch
 arduino-cli upload -p /dev/ttyUSB0 --fqbn arduino:avr:nano -v MyFirstSketch
 ```

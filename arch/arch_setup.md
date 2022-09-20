@@ -84,4 +84,39 @@ example usage
 arduino-cli compile --fqbn  arduino:avr:nano ~/Arduino/MyFirstSketch
 arduino-cli upload -p /dev/ttyUSB0 --fqbn arduino:avr:nano -v MyFirstSketch
 ```
+### samba nas
+[Helpful reference link]()
+```
+pacman -S samba
+```
+downlad the [default configuration file](https://raw.githubusercontent.com/zentyal/samba/master/examples/smb.conf.default) and copy it
+```
+sudo cp /etc/samba/smb.conf.default /etc/samba/smb.conf
+```
+test configuration file syntax
+```
+testparm
+```
+add user access to the server
+```
+sudo pdbedit -a -u brendan
+```
+restart services and enable them
+```
+sudo systemctl restart smb nmb
+sudo systemctl enable smb nmb
+```
+list public shares
+```
+smbclient -L 192.168.50.1 -U%
+```
+make directory for manual mount
+```
+sudo mkdir /mnt/ElliesHD
+```
+manually mount
+```
+sudo mount -t cifs //192.168.50.1/ElliesHD /mnt/ElliesHD -o username=[username],password=[password],uid=1000,gid=1000,vers=2.0
+```
+
 

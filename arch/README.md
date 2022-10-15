@@ -56,6 +56,8 @@ ping -c 3 www.google.com
 `nmcli device wifi connect [Wifi Network Name] password [password]`
 
 ## Programs
+### xorg
+TODO: Configure [desktop file applications](https://github.com/brendanfitz/config-files/edit/master/arch/README.md) for things like jupyter
 ### xinit
 ### i3
 ### Alacritty

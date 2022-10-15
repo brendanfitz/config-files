@@ -52,6 +52,9 @@ check connection
 ```
 ping -c 3 www.google.com
 ```
+### Connect to wifi after Initial Setup
+`nmcli device wifi connect [Wifi Network Name] password [password]`
+
 ## Programs
 ### xinit
 ### i3

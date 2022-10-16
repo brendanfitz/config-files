@@ -52,18 +52,22 @@ check connection
 ```
 ping -c 3 www.google.com
 ```
-### Connect to wifi after Initial Setup
-`nmcli device wifi connect [Wifi Network Name] password [password]`
-
 ### install xorg
 `sudo pacman -S xorg-server xorg-apps xorg-xinit xdg-utils`
 
 ### install i3 (with gaps)
 `sudo pacman -S i3-gaps alacritty`
 
-### amd utils
-`sudo pacman -S xf86-video-amdgpu mesa`
+### amd utils and nvidia
+`sudo pacman -S xf86-video-amdgpu mesa nvidia`
 
+## Post Install
+
+### Connect to wifi after Initial Setup
+`nmcli device wifi connect [Wifi Network Name] password [password]`
+
+### gui packages
+`sudo pacman -S i3-gaps alacritty picom polybar rofi feh`
 ### install fonts
 `sudo pacman -S ttf-dejavu noto-fonts ttf-ubuntu-font-family ttf-freefont ttf-liberation ttf-roboto terminus-font powerline-fonts`
 

@@ -59,7 +59,7 @@ ping -c 3 www.google.com
 `sudo pacman -S xorg-server xorg-apps xorg-xinit xdg-utils`
 
 ### install i3 (with gaps)
-`sudo pacman -S i3-gaps`
+`sudo pacman -S i3-gaps alacritty`
 
 ### amd utils
 `sudo pacman -S xf86-video-amdgpu mesa`
@@ -116,6 +116,10 @@ sudo pacman -S pulseaudio pulseaudio-bluetooth bluez bluez-utils blueman
 ```
 
 ### arduino
+install packages
+```
+sudo pacman -S arduino arduino-cli arduino-avr-core
+```
 add to group for using ports
 ```
 sudo usermod -aG uucp brendan

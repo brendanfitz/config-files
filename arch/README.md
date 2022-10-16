@@ -55,10 +55,54 @@ ping -c 3 www.google.com
 ### Connect to wifi after Initial Setup
 `nmcli device wifi connect [Wifi Network Name] password [password]`
 
+### install xorg
+`sudo pacman -S xorg-server xorg-apps xorg-xinit xdg-utils`
+
+### install i3 (with gaps)
+`sudo pacman -S i3-gaps`
+
+### amd utils
+`sudo pacman -S xf86-video-amdgpu mesa`
+
+### install fonts
+`sudo pacman -S ttf-dejavu noto-fonts ttf-ubuntu-font-family ttf-freefont ttf-liberation ttf-roboto terminus-font powerline-fonts`
+
 ## Programs
-### xorg
+
+### Power Management
+edit the systemd sleep.conf
+`sudo vim /etc/systemd/sleep.conf`
+and set the suspend param
+`AllowSuspend=yes`
+
+### xorg and xinit
 TODO: Configure [desktop file applications](https://github.com/brendanfitz/config-files/edit/master/arch/README.md) for things like jupyter
-### xinit
+### yay (AUR package manager)
+```
+cd /opt/
+sudo git clone https://aur.archlinux.org/yay-git.git
+sudo chown -R brendan:brendan ./yay-git
+cd yay-git/
+makepkg -si
+```
+### browser and media player
+`sudo pacman -S firefox vlc --needed`
+
+### manpages
+`sudo pacman -S man`
+
+### openrgb
+```sudo pacman -S i2cdetect i2c-tools lm_sensors`
+
+### python
+`sudo pacman -S python-pip`
+
+### libreoffice
+add the fresh for the beta versions
+```
+sudo pacman -S libreoffice[-fresh]
+```
+
 ### i3
 ### Alacritty
 ### Vim
@@ -67,6 +111,10 @@ TODO: Configure [desktop file applications](https://github.com/brendanfitz/confi
 ### rofi
 ### audio/bluetooth
 See [guide from Linux Hint](https://linuxhint.com/configure_bluetooth_arch_linux/)
+```
+sudo pacman -S pulseaudio pulseaudio-bluetooth bluez bluez-utils blueman
+```
+
 ### arduino
 add to group for using ports
 ```

@@ -58,3 +58,12 @@ Execute this task in a command prompt to run immediately or follow the instructi
 Run `ipconfig /all` in your command prompt and copy the IPv4 address
 
 Then on your linux computer go to `http://[IPv4 Address]:9999` and you should be up and running!
+
+# Widgets Don't Display
+
+```
+sudo pacman -S nodejs npm
+pip install ipywidgets
+jupyter nbextension enable --py widgetsnbextension
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+```

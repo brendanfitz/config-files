@@ -75,9 +75,12 @@ ping -c 3 www.google.com
 
 ### Power Management
 edit the systemd sleep.conf
-`sudo vim /etc/systemd/sleep.conf`
+`sudo vim /etc/systemd/logind.conf`
 and set the suspend param
-`AllowSuspend=yes`
+```
+IdleAction=suspend
+IdleActionSec=15min
+```
 
 ### xorg and xinit
 TODO: Configure [desktop file applications](https://github.com/brendanfitz/config-files/edit/master/arch/README.md) for things like jupyter

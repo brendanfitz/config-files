@@ -64,12 +64,18 @@ ping -c 3 www.google.com
 ## Post Install
 
 ### Connect to wifi after Initial Setup
-`nmcli device wifi connect [Wifi Network Name] password [password]`
+```
+nmcli device wifi connect [Wifi Network Name] password [password]
+```
 
 ### gui packages
-`sudo pacman -S i3-gaps alacritty picom polybar rofi feh`
+```
+sudo pacman -S i3-gaps alacritty picom polybar rofi feh
+```
 ### install fonts
-`sudo pacman -S ttf-dejavu noto-fonts ttf-ubuntu-font-family ttf-freefont ttf-liberation ttf-roboto terminus-font powerline-fonts`
+```
+sudo pacman -S ttf-dejavu noto-fonts ttf-ubuntu-font-family ttf-freefont ttf-liberation ttf-roboto terminus-font powerline-fonts
+```
 
 ## Programs
 
@@ -90,16 +96,24 @@ cd yay-git/
 makepkg -si
 ```
 ### browser and media player
-`sudo pacman -S firefox vlc --needed`
+```
+sudo pacman -S firefox vlc --needed
+```
 
 ### manpages
-`sudo pacman -S man`
+```
+sudo pacman -S man
+```
 
 ### openrgb
-`sudo pacman -S i2cdetect i2c-tools lm_sensors`
+```
+sudo pacman -S i2cdetect i2c-tools lm_sensors
+```
 
 ### python
-`sudo pacman -S python-pip`
+```
+sudo pacman -S python-pip
+```
 
 ### libreoffice
 add the fresh for the beta versions

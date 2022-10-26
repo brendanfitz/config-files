@@ -200,3 +200,6 @@ bindsym $mod+space exec "rofi -show drun"
 
 # start windows
 exec --no-startup-id ~/.config/i3/i3_startup.sh
+
+# xautolock
+exec xautolock -time 30 locker "systemctl suspend" -detectsleep

@@ -53,7 +53,7 @@ check connection
 ping -c 3 www.google.com
 ```
 ### install xorg
-`sudo pacman -S xorg-server xorg-apps xorg-xinit xdg-utils`
+`sudo pacman -S xorg-server xorg-apps xorg-xinit xdg-utils xautolock`
 
 ### install i3 (with gaps)
 `sudo pacman -S i3-gaps alacritty`
@@ -74,12 +74,9 @@ ping -c 3 www.google.com
 ## Programs
 
 ### Power Management
-edit the systemd sleep.conf
-`sudo vim /etc/systemd/logind.conf`
-and set the suspend param
+install `xautolock` and add the following line to the bottom of the i3 config file (the number after `-time` is the minutes before suspending to ram)
 ```
-IdleAction=suspend
-IdleActionSec=15min
+exec xautolock -time 30 locker "systemctl suspend" -detectsleep
 ```
 
 ### xorg and xinit
@@ -99,7 +96,7 @@ makepkg -si
 `sudo pacman -S man`
 
 ### openrgb
-```sudo pacman -S i2cdetect i2c-tools lm_sensors`
+`sudo pacman -S i2cdetect i2c-tools lm_sensors`
 
 ### python
 `sudo pacman -S python-pip`

@@ -194,5 +194,8 @@ manually mount
 ```
 sudo mount -t cifs //192.168.50.1/ElliesHD /mnt/ElliesHD -o username=[username],password=[password],uid=1000,gid=1000,vers=2.0
 ```
+### Stop Firefox from Restoring Sessions
+
+Firefox can be annoying and always restores sessions after a shutdown. [This link](https://support.mozilla.org/en-US/kb/restore-previous-session#w_configuring-session-restore) explains how to change that.
 
 

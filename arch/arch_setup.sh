@@ -1,5 +1,5 @@
 #!/bin/bash
-WD="$HOME/Documents/GitHub/config-files/"
+WD="$HOME/Documents/GitHub/config-files"
 
 # alacritty
 rm -f $HOME/.xinitrc
@@ -21,6 +21,11 @@ ln -s $WD/arch/shell/.p10k.zsh $HOME/
 # vim
 sudo rm -f /etc/vimrc
 sudo ln -s $WD/arch/shell/.vimrc /etc/vimrc
+
+# ranger
+mkdir -p $HOME/.config/ranger
+rm -f $HOME/.config/ranger/*
+ln -s $WD/arch/ranger/* $HOME/.config/ranger
 
 # i3
 mkdir -p $HOME/.config/i3

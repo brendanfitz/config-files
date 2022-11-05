@@ -132,6 +132,15 @@ See [guide from Linux Hint](https://linuxhint.com/configure_bluetooth_arch_linux
 ```
 sudo pacman -S pulseaudio pulseaudio-bluetooth bluez bluez-utils blueman
 ```
+### ranger
+
+Great [introduction to Ranger](https://linuxconfig.org/introduction-to-ranger-file-manager)
+
+Install w3m for viewing photos in alacritty
+
+```
+sudo pacman -S ranger w3m
+```
 
 ### arduino
 install packages

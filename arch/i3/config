@@ -46,7 +46,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # remove mouse focus
 focus_follows_mouse no
@@ -179,7 +179,7 @@ bindsym $mod+r mode "resize"
 exec --no-startup-id /usr/bin/feh --bg-scale /home/brendan/.config/i3/wallpaper.jpeg
 
 # picom
-exec_always --no-startup-id picom -bc --config ~/.config/picom/picom.conf
+exec_always --no-startup-id "sleep 2; picom -bc --config ~/.config/picom/picom.conf"
 
 # polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
@@ -196,10 +196,10 @@ smart_borders no_gaps
 hide_edge_borders smart_no_gaps
 
 # rofi
-bindsym $mod+space exec "rofi -show drun"
+bindsym $mod+space exec --no-startup-id "rofi -show drun"
 
 # start windows
 exec --no-startup-id ~/.config/i3/i3_startup.sh
 
 # xautolock
-exec xautolock -time 30 -locker "systemctl suspend" -detectsleep
+exec --no-startup-id xautolock -time 30 -locker "systemctl suspend" -detectsleep

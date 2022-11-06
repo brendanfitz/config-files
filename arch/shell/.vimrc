@@ -38,14 +38,9 @@ Plugin 'tpope/vim-fugitive'
 " Plugin 'Lokaltlog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'preservim/tagbar'
 
-" Markdown
-Plugin 'godlygeek/tabular'
-Plugin 'preservim/vim-markdown'
-
 " all Plugins must be added before the following line
 call vundle#end()
 
-let python_highlight_all=1
 syntax on
 filetype plugin indent on 
 

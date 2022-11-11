@@ -207,4 +207,11 @@ sudo mount -t cifs //192.168.50.1/ElliesHD /mnt/ElliesHD -o username=[username],
 
 Firefox can be annoying and always restores sessions after a shutdown. [This link](https://support.mozilla.org/en-US/kb/restore-previous-session#w_configuring-session-restore) explains how to change that.
 
+### How to remove a program
+
+[Link](https://linuxhint.com/remove_package_dependencies_pacman_arch_linux/)
+
+### How to add a program to Rofi's Rocket Menu Launcher
+
+[Link](https://forum.archlabslinux.com/t/how-to-add-a-program-to-rofi-and-the-rocket-menu/437)
 

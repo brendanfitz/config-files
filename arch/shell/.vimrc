@@ -21,7 +21,7 @@ set nocompatible
 filetype off
 
 " set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=/home/brendan/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " let Vundle manage Vundle, required
@@ -177,3 +177,7 @@ set directory=/tmp
 
 " tagbar
 nmap <F8> :TagbarToggle<CR>
+
+" set for copy to clipboard
+" see link here https://superuser.com/questions/436890/cant-copy-to-clipboard-from-vim
+set mouse=v
